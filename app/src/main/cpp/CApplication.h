@@ -1,0 +1,13 @@
+#ifndef NATIVEANDROID_CAPPLICATION_H
+#define NATIVEANDROID_CAPPLICATION_H
+
+#include <map>
+
+class CApplication {
+
+
+
+};
+
+
+#endif //NATIVEANDROID_CAPPLICATION_H
