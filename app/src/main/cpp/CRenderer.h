@@ -1,15 +1,17 @@
 #ifndef NATIVEANDROID_CRENDERER_H
 #define NATIVEANDROID_CRENDERER_H
 
-
 #include <string>
 
 class CRenderer
 {
 public:
     explicit CRenderer();
+    ~CRenderer();
 
-    void setShaders(const std::string &vertex, const std::string &fragment);
+    void setVertexShader(const std::string &vertex);
+    void setFragmentShader(const std::string &fragment);
+    bool initShaders();
     void onCreate();
     void onChanged(int width, int height);
     void onDraw();
@@ -17,6 +19,8 @@ public:
     int width() const;
     int height() const;
     std::string errorString() const;
+
+    int programId()const{ return program; }
 
 private:
     int createProgram();
@@ -28,7 +32,7 @@ private:
     int _height = 1;
 
     std::string _errorString = "";
+    int program = -1;
 };
-
 
 #endif //NATIVEANDROID_CRENDERER_H

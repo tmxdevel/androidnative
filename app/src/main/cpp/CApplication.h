@@ -1,12 +1,16 @@
 #ifndef NATIVEANDROID_CAPPLICATION_H
 #define NATIVEANDROID_CAPPLICATION_H
 
-#include <map>
+#include "CRenderer.h"
+#include "CHashMap.h"
 
-class CApplication {
+class CApplication
+{
+public:
+    CRenderer* getRenderer(int id);
 
-
-
+private:
+    CHashMap<int, CRenderer*> _renderers;
 };
 
 

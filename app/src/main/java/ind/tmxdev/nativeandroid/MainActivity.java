@@ -17,7 +17,12 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        NativeRenderer renderer = new NativeRenderer(1);
+        NativeSurface surf = new NativeSurface(this);
+        surf.setEGLContextClientVersion(2);
+        surf.setRenderer(renderer);
 
+        setContentView(surf);
 
     }
 
